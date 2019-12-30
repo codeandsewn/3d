@@ -5,8 +5,6 @@ html, body {
   background: #000;
 }
 
-
-
 @font-face {
   font-family: 'GT';
   src: url('gt.woff2') format('woff2'),
