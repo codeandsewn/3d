@@ -16,26 +16,19 @@
 
 	<body>
 
-		<div id="info">
+		<div id="info" style="display: none">
 			<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - (<span id="description">normal + ao + displacement + environment</span>) map demo.<br />
 			ninja head from <a href="http://developer.amd.com/tools-and-sdks/archive/legacy-cpu-gpu-tools/amd-gpu-meshmapper/" target="_blank" rel="noopener">AMD GPU MeshMapper</a>
 
 			<div id="vt">displacement mapping requires vertex textures</div>
 		</div>
 
+		<div class="fade-in"></div>
     <div class="title">CALABASAS COWBOYS</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 		<script type="module">
-
-
-
-
-
-
-
-
-
-
 			import * as THREE from 'https://cdn.rawgit.com/mrdoob/three.js/master/build/three.module.js';
 			import Stats from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/jsm/libs/stats.module.js';
 			import { GUI } from 'https://cdn.rawgit.com/mrdoob/three.js/master/examples/jsm/libs/dat.gui.module.js';
@@ -60,8 +53,11 @@
 			var pointLight, ambientLight;
 
 			var height = 1200; // of camera frustum
-
+			if (window.innerWidth < 1000) {
+				height = 2500;
+			}
 			var r = 0.0;
+
 
 			init();
 			animate();
@@ -144,7 +140,7 @@
 				controls.enableZoom = false;
 				controls.enableDamping = true;
         controls.dampingFactor = 0.05;
-
+				controls.autoRotate = true;
 
 				// lights
 
@@ -220,25 +216,22 @@
 
   					mesh = new THREE.Mesh( geometry1, material );
   					mesh.scale.multiplyScalar( 5 );
-
   					scene.add( mesh );
           }
 
 				} );
 
-				//
 
+				//
 				var description = "normal + ao" + ( renderer.capabilities.vertexTextures ? " + displacement + environment" : " + <strike>displacement</strike>" );
 				document.getElementById( "description" ).innerHTML = description;
 				document.getElementById( "vt" ).style.display = renderer.capabilities.vertexTextures ? "none" : "block";
 
 				//
-
 				stats = new Stats();
 				//container.appendChild( stats.dom );
 
 				//
-
 				window.addEventListener( 'resize', onWindowResize, false );
 
 			}
@@ -282,7 +275,14 @@
 
 			}
 
+
+
+			window.onload = function() {
+				$(".fade-in").addClass("fade");
+				$(".title").addClass("fade");
+			}
 		</script>
+
 
 	</body>
 
