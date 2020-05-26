@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  @font-face {
+    font-family: 'F';
+    src: url('fugazi.woff2') format('woff2'),
+         url('fugazi.woff') format('woff');
+    font-style:   normal;
+    font-stretch: normal;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    overflow: hidden;
+  }
+
+section {
+    background: #E8E8E8;
+}
+
+p {
+    font-size: 10px;
+    line-height: 9px;
+    background:  url(https://media.giphy.com/media/UMLFm3OcX0b6M/giphy.gif) no-repeat;
+    font-family: "Roboto Condensed";
+    background-size: cover;
+
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.5) ;
+    -moz-text-fill-color: rgba(255, 255, 255, 0.5) ;
+    text-fill-color: rgba(255, 255, 255, 0.5) ;
+    font-weight: 900;
+    margin: 0;
+    mix-blend-mode: darken;
+    opacity: .5;
+    background-position: center;
+    background-attachment: fixed;
+    background-clip: text;
+  
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.container h1 {
+    margin: 0;
+    font-size: 150px;
+    color: red;
+    font-family: 'F', Arial;
+    text-transform: uppercase;
+    filter: url("#distort");
+}
+
+.container a {
+  color: red;
+  font-family: 'F', Arial;
+  text-transform: uppercase;
+  filter: url("#distort");
+  font-size: 50px;
+  letter-spacing: 20px;
+  text-decoration: none;
+  position: relative;
+}
+
+.container a span {
+  position: absolute;
+  width: 110%;
+  height: 2px;
+  background: red;
+  top: 30px;
+  left: -30px;
+}
+
+.container a.loaded span {
+
+}
+svg {
+  display: none;
+}

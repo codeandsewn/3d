@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="fade-in"></div>
-    <div class="title">CALABASAS COWBOYS</div>
+    <div class="title">?????????</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -209,15 +209,15 @@
 				//
 
 				var loader = new OBJLoader();
-				loader.load( "yeet.obj", function ( group ) {
+				loader.load( "black.obj", function ( group ) {
 
 
-          for (var i = 0; i < 7; i++) {
+          for (var i = 0; i < 100; i++) {
   					var geometry1 = group.children[i].geometry;
   					geometry1.attributes.uv2 = geometry1.attributes.uv;
 
   					mesh = new THREE.Mesh( geometry1, material );
-  					mesh.scale.multiplyScalar( 5 );
+  					mesh.scale.multiplyScalar( 80 );
   					scene.add( mesh );
           }
 
